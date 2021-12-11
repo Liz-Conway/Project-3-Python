@@ -18,7 +18,7 @@ class DateValidator():
         Constructor
         '''
         self.format = "%Y-%m-%d"
-        self.min_date = date(2012, 8, 7)
+        self.min_date = date(2012, 8, 15)
         self.max_date = date(2018, 2, 27)
 
     def validateDate(self, date_string):
