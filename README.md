@@ -8,8 +8,9 @@ There is a date gap where the second last date is '2012-08-15' and the last date
 
 ## Credit
 
-| Code purpose           | Author   | Link                                                                               |
-| ---------------------- | -------- | ---------------------------------------------------------------------------------- |
-| Validate a date string | kite.com | https://www.kite.com/python/answers/how-to-validate-a-date-string-format-in-python |
-|                        |          |                                                                                    |
-| Skip first line in a file | kite.com | https://www.kite.com/python/answers/how-to-skip-the-first-line-of-a-file-in-python|
+| Code purpose              | Author   | Link                                                                               |
+| ------------------------- | -------- | ---------------------------------------------------------------------------------- |
+| Validate a date string    | kite.com | https://www.kite.com/python/answers/how-to-validate-a-date-string-format-in-python |
+|                           |          |                                                                                    |
+| Skip first line in a file | kite.com | https://www.kite.com/python/answers/how-to-skip-the-first-line-of-a-file-in-python |
+|Format dates in Python|Nicholas Samuel| https://stackabuse.com/how-to-format-dates-in-python/|
