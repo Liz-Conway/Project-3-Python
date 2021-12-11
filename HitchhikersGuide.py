@@ -53,11 +53,9 @@ def main():
     
     # Get the median temperature for the entire set of data
     median_temperature = load_data.get_median_temperature()
-    print(f"Median Temp:  {median_temperature}")
     
     # Get the median air pressure for the entire set of data
     median_air_pressure = load_data.get_median_air_pressure()
-    print(f"Median Pressure:  {median_air_pressure}")
     
     # WeatherActivity uses the median temperature and air pressure
     # to determine whether a particular day's value is "High" or "Low"
@@ -70,13 +68,19 @@ def main():
         activities.append(day_activity)
     
     #Show the user the selected activities for their arrival and subsequent days
-    print("Congratulations the following activities have been specially chosen for you\n")
+    print("\nCongratulations the following activities have been specially chosen for you:")
     for activity in activities:
-        print(f"    {activity}\n")
+        print(f"    {activity}")
+        
+    # If the user choses a valid date but the number of stay days will go beyond the dates in the dataset
+    # print a message to the user informing them of this
+    if int(stay_days) > len(activities):
+        print("WARNING:  Your stay goes beyond the last valid holiday date")
+        print("Hitchhiker's Guide recommends blasting off from the planet before this")
     
 
 print("~"*40)
-print("  Hitchhiker's Guide to the Red Planet")
+print("  HITCHHIKER'S GUIDE TO THE RED PLANET")
 print("~"*40)
 main()
 
