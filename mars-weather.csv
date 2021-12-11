@@ -1892,4 +1892,3 @@ id,terrestrial_date,sol,ls,month,min_temp,max_temp,pressure,wind_speed,atmo_opac
 13,2012-08-17,11,156,Month 6,-76,-11,740,NaN,Sunny
 2,2012-08-16,10,155,Month 6,-75,-16,739,NaN,Cloudy
 232,2012-08-15,9,155,Month 6,NaN,NaN,NaN,NaN,Sunny
-1,2012-08-07,1,150,Month 6,NaN,NaN,NaN,NaN,Cloudy

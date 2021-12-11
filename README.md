@@ -1,5 +1,11 @@
 # Mostly Harmless
 
+## Data Coercion
+1. **Atmospheric Opacity**
+In the original dataset the Atmospheric Opacity was all set to "Sunny".  In order to provide meaningful searches that would return all of the different activities - every second Atmospheric Opacity reading was changed to "Cloudy"
+2. **Date continuity**
+There is a date gap where the second last date is '2012-08-15' and the last date is '2012-08-07' - a gap of one week.  The last record in the original data was removed in order to maintain a continuous set of readings.
+
 ## Credit
 
 | Code purpose           | Author   | Link                                                                               |
