@@ -19,6 +19,10 @@ class LoadData():
         '''
         self.csv_file = csv_file
         self.weather = []
+        self.max_temp = -999    # Temporary max temp - deliberately very low
+        self.min_temp = 999    # Temporary min temp - deliberately very high
+        self.max_pressure = -999    # Temporary max pressure - deliberately very low
+        self.min_pressure = 9999    # Temporary min pressure - deliberately very high
         
     def load(self):
         self.loaded_data = open(self.csv_file, 'r')
@@ -26,21 +30,29 @@ class LoadData():
         next(self.loaded_data)
         
         for line in self.loaded_data :
-            # print("~~~~")
-            # print(line)
             sol_weather = line.split(',')
-            i = 0
-            # for datum in sol_weather:
-            #     print(str(i) + ":  " + datum)
-            #     i+=1
             dateUtil = DateUtil()
             solDate = dateUtil.stringToDate(sol_weather[1])
             solTemp = int(sol_weather[6])
+            if solTemp > self.max_temp :
+                self.max_temp = solTemp
+            if solTemp < self.min_temp :
+                self.min_temp = solTemp
+                
             solPressure = int(sol_weather[7])
+            if solPressure > self.max_pressure :
+                self.max_pressure = solPressure
+            if solPressure < self.min_pressure :
+                self.min_pressure = solPressure
             solOpacity = sol_weather[9].rstrip()    # remove newline character
             
             daySol = Sol(solDate, solTemp, solPressure, solOpacity)
             
             self.weather.append(daySol)
         
-        print(self.weather)
+    def get_median_temperature(self):
+        return (self.max_temp + self.min_temp) // 2
+    
+    def get_median_air_pressure(self):
+        return(self.max_pressure + self.min_pressure) // 2
+        
