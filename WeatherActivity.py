@@ -19,6 +19,12 @@ class WeatherActivity():
     def decideWeatherActivity(self, sol):
         activity = "Do nothing"
         
+        if sol.temperature == "NaN" :
+            closed_date = sol.earth_date
+            # https://stackabuse.com/how-to-format-dates-in-python/
+            closed = closed_date.strftime("%A, %d %b %Y")
+            return f"Resort closed on :  {closed}"
+        
         if sol.temperature > self.average_temperature : # High Temperature
             if sol.opacity == "Sunny" :     #High Temp & Sunny
                 if sol.air_pressure > self.average_air_pressure : #High Temp, Sunny, High pressure
