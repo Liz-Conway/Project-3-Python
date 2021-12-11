@@ -19,7 +19,7 @@ class DateUtil():
         '''
         self.format = "%Y-%m-%d"
         
-    def stringToDate(self, date_string):
+    def string_to_date(self, date_string):
         date_time = datetime.strptime(date_string, self.format)
         date_date = datetime.date(date_time)
         return date_date

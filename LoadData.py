@@ -34,7 +34,7 @@ class LoadData():
         for line in self.loaded_data :
             sol_weather = line.split(',')
             dateUtil = DateUtil()
-            solDate = dateUtil.stringToDate(sol_weather[1])
+            solDate = dateUtil.string_to_date(sol_weather[1])
             try:
                 solTemp = int(sol_weather[6])
                 if solTemp > self.max_temp :
