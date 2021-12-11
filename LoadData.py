@@ -5,8 +5,9 @@ Created on 6 Dec 2021
 '''
 
 from DateUtil import DateUtil
+from datetime import date
+
 from Sol import Sol
-from _ast import Try
 
 class LoadData():
     '''
@@ -63,3 +64,11 @@ class LoadData():
     def get_median_air_pressure(self):
         return(self.max_pressure + self.min_pressure) // 2
         
+    def search_for_day(self, search_date):
+        sol_day = DateUtil().stringToDate(search_date)
+        
+        for sol in self.weather:
+            if sol.earth_date == sol_day :
+                return sol
+            
+        return "Sol not found in weather data"
