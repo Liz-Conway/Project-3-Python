@@ -18,12 +18,11 @@ class WeatherActivity():
         
     def decideWeatherActivity(self, sol):
         activity = "Do nothing"
+        # https://stackabuse.com/how-to-format-dates-in-python/
+        activity_date = sol.earth_date.strftime("%A, %d %b %Y")
         
         if sol.temperature == "NaN" :
-            closed_date = sol.earth_date
-            # https://stackabuse.com/how-to-format-dates-in-python/
-            closed = closed_date.strftime("%A, %d %b %Y")
-            return f"Resort closed on :  {closed}"
+            return f"Resort closed on :  {activity_date}"
         
         if sol.temperature > self.average_temperature : # High Temperature
             if sol.opacity == "Sunny" :     #High Temp & Sunny
@@ -49,7 +48,7 @@ class WeatherActivity():
                     activity = "Play Sardines"
             
             
-        return activity
+        return f"{activity_date} :  {activity}"
     
     
     
