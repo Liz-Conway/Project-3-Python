@@ -6,6 +6,7 @@ Created on 6 Dec 2021
 
 from DateUtil import DateUtil
 from Sol import Sol
+from _ast import Try
 
 class LoadData():
     '''
@@ -33,17 +34,23 @@ class LoadData():
             sol_weather = line.split(',')
             dateUtil = DateUtil()
             solDate = dateUtil.stringToDate(sol_weather[1])
-            solTemp = int(sol_weather[6])
-            if solTemp > self.max_temp :
-                self.max_temp = solTemp
-            if solTemp < self.min_temp :
-                self.min_temp = solTemp
+            try:
+                solTemp = int(sol_weather[6])
+                if solTemp > self.max_temp :
+                    self.max_temp = solTemp
+                if solTemp < self.min_temp :
+                    self.min_temp = solTemp
+            except ValueError as ve :
+                solTemp = "NaN"
                 
-            solPressure = int(sol_weather[7])
-            if solPressure > self.max_pressure :
-                self.max_pressure = solPressure
-            if solPressure < self.min_pressure :
-                self.min_pressure = solPressure
+            try:    
+                solPressure = int(sol_weather[7])
+                if solPressure > self.max_pressure :
+                    self.max_pressure = solPressure
+                if solPressure < self.min_pressure :
+                    self.min_pressure = solPressure
+            except ValueError as ve :
+                    solPressure = "NaN"
             solOpacity = sol_weather[9].rstrip()    # remove newline character
             
             daySol = Sol(solDate, solTemp, solPressure, solOpacity)

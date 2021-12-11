@@ -24,3 +24,11 @@ class Sol():
             self.temperature == other.temperature and \
             self.opacity == other.opacity and \
             self.air_pressure == other.air_pressure
+            
+    def __str__(self):
+        me = "Date :  " + str(self.earth_date)
+        me += "  Temp: " + str(self.temperature)
+        me += "  Opacity:  " + str(self.opacity)
+        me += "  Pressure:  " + str(self.air_pressure)
+        
+        return me
