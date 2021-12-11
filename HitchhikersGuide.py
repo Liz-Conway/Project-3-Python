@@ -15,6 +15,24 @@ def main():
     load_data = LoadData('../mars-weather.csv')
     load_data.load()
     print("Data loaded successfully!")
+    #weather_data = load_data.weather
+    # Loop to get valid input from the user
+    while True:
+        print("Please enter a date in the format yyyy-mm-dd  E.G. 2015-03-24")
+        print("Valid dates are between 2012-08-15 and 2018-02-27\n")
+        search_date = input("What date are you arriving on Mars?\n")
+        
+        date_validator = DateValidator()
+        valid_date = date_validator.validateDate(search_date)
+        
+        if not valid_date :
+            # If the date is not valid
+            # Skip the rest of the loop
+            # and continue at the start of the while loop again
+            # asking for the date
+            break
+    
+    # Congratulations you have valid data!!
     # The rest of the program starts here :
     # Retrieve the weather for the entered dates
     weather_day = load_data.search_for_day(search_date)
