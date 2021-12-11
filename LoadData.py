@@ -70,5 +70,5 @@ class LoadData():
         for sol in self.weather:
             if sol.earth_date == sol_day :
                 return sol
-            
-        return "Sol not found in weather data"
+        
+        raise IndexError(f"No weather data found for {search_date}")
