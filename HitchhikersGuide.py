@@ -12,7 +12,7 @@ def main():
     Launch point for the Hitchhiker's Guide to the Red Planet
     '''
     print("Loading weather_data!!!")
-    load_data = LoadData('../mars-weather.csv')
+    load_data = LoadData('mars-weather.csv')
     load_data.load()
     print("Data loaded successfully!")
     #weather_data = load_data.weather
@@ -30,30 +30,49 @@ def main():
             # Skip the rest of the loop
             # and continue at the start of the while loop again
             # asking for the date
+            continue
+        
+        stay_days = input("How many days will you be staying (positive integers only)?\n")
+        
+        # https://www.pythonpool.com/python-check-if-string-is-integer/
+        # isdigit() Only allows positive integers
+        valid_days = stay_days.isdigit()
+        
+        # If we get here the date is valid, so we only need to worry about the stay_days
+        if valid_days :   # Days are valid
+            # If the days entered are valid then
+            # break out of this while loop and continue running the rest of the program
+            # If the days entered is not a positive integer then
+            # the while loop will keep looping until a valid date and days are entered
             break
     
     # Congratulations you have valid data!!
     # The rest of the program starts here :
     # Retrieve the weather for the entered dates
-    weather_day = load_data.search_for_day(search_date)
+    weather_days = load_data.search_for_days(search_date, stay_days)
     
     # Get the median temperature for the entire set of data
     median_temperature = load_data.get_median_temperature()
-    # print(f"Median Temp:  {median_temperature}")
+    print(f"Median Temp:  {median_temperature}")
     
     # Get the median air pressure for the entire set of data
     median_air_pressure = load_data.get_median_air_pressure()
-    # print(f"Median Pressure:  {median_air_pressure}")
+    print(f"Median Pressure:  {median_air_pressure}")
     
     # WeatherActivity uses the median temperature and air pressure
     # to determine whether a particular day's value is "High" or "Low"
     weather_activity = WeatherActivity(median_temperature, median_air_pressure)
-    # Retrieve the activity for the entered date
-    activity = weather_activity.decideWeatherActivity(weather_day)
     
-    #Show the user the selected activity for their arrival day
-    print("Congratulations the following activity has been specially chosen for you\n")
-    print(f"    {activity}\n")
+    # Retrieve the activities for the entered date and stay days
+    activities = []
+    for weather_day in weather_days:
+        day_activity = weather_activity.decideWeatherActivity(weather_day)
+        activities.append(day_activity)
+    
+    #Show the user the selected activities for their arrival and subsequent days
+    print("Congratulations the following activities have been specially chosen for you\n")
+    for activity in activities:
+        print(f"    {activity}\n")
     
 
 print("~"*40)

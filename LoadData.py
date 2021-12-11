@@ -65,10 +65,49 @@ class LoadData():
         return(self.max_pressure + self.min_pressure) // 2
         
     def search_for_day(self, search_date):
-        sol_day = DateUtil().stringToDate(search_date)
+        sol_day = DateUtil().string_to_date(search_date)
         
         for sol in self.weather:
             if sol.earth_date == sol_day :
                 return sol
         
         raise IndexError(f"No weather data found for {search_date}")
+    
+    def search_for_days(self, search_date, days):
+        sol_first_day = DateUtil().string_to_date(search_date)
+        sol_index = 0   # sol_index in the weather list where we find the first day
+        
+        sols = []
+        # Use this for loop to get the sol_index in self.weather list of the search date
+        for sol in self.weather:
+            if sol.earth_date == sol_first_day:
+                # Found it at sol_index
+                # So breaking out of the for loop here
+                # means variable sol_index is the index of the day 
+                # that we are looking for
+                break
+            
+            # if the days do not match
+            # increment sol_index and the for loop will get the next Sol
+            sol_index += 1
+        
+        # Since the data goes from latest day first to the earliest day last, i.e. in reverse order
+        # we take the number of days away from the found index to get the last day to return    
+        latest_index = sol_index - int(days) + 1
+        # If the latest index is negative
+        # this means we have gone past the start of the data
+        # so set the latest index to be zero (The very last entry in the data set)
+        if latest_index < 0 :
+            latest_index = 0
+            
+        earliest_index = sol_index + 1
+        
+        # Use this for loop to retrieve the Sol for each day
+        # Data is in reverse date order, i.e. latest date first, earliest date last
+        # Use 'reversed' for the range to go from the higher (earliest) index to the lower (latest)
+        for i in reversed(range(latest_index, earliest_index)):
+            sol = self.weather[i]
+            sols.append(sol)
+            
+        return sols
+        
