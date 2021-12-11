@@ -8,31 +8,39 @@ class WeatherActivity():
     '''
     classdocs
     '''
-    #average_temperature = 0
-    #average_opacity = 0
-    #average_wind_speed = 0
 
-
-    def __init__(self, avg_temp, avg_opacity, avg_wind):
+    def __init__(self, avg_temp, avg_pressure):
         '''
         Constructor
         '''
         self.average_temperature = avg_temp
-        self.average_opacity = avg_opacity
-        self.average_wind_speed = avg_wind
+        self.average_air_pressure = avg_pressure
         
     def decideWeatherActivity(self, sol):
         activity = "Do nothing"
         
-        print(sol)
-        print(sol.temperature)
-        print(self.average_temperature)
-        
         if sol.temperature > self.average_temperature : # High Temperature
-            activity = "Paragliding"
+            if sol.opacity == "Sunny" :     #High Temp & Sunny
+                if sol.air_pressure > self.average_air_pressure : #High Temp, Sunny, High pressure
+                    activity = "Paragliding"
+                else:                                       # High Temp, Sunny, Low pressure
+                    activity = "Sunbathing"
+            else :                                  #High Temp, Cloudy
+                if sol.air_pressure > self.average_air_pressure : #High Temp, Cloudy, High pressure
+                    activity = "Blind Date"
+                else :                          #High Temp, Cloudy, Low pressure
+                    activity = "Happy Hour"
         else :                                          # Low Temperature
-            activity = "Play Sardines"
-            
+            if sol.opacity == "Sunny" :     #Low Temp, Sunny
+                if sol.air_pressure > self.average_air_pressure : #Low Temp, Sunny & High pressure
+                    activity = "Star Gazing"
+                else:                                 # Low Temp, Sunny, Low pressure
+                    activity = "Volleyball"
+            else :                                  #Low Temp, Cloudy
+                if sol.air_pressure > self.average_air_pressure : #Low Temp, Cloudy, High pressure
+                    activity = "Ski at poles"
+                else :                          #Low Temp, Cloudy, Low pressure
+                    activity = "Play Sardines"
             
             
         return activity
