@@ -22,7 +22,7 @@ class WeatherActivity():
         activity_date = sol.earth_date.strftime("%A, %d %b %Y")
         
         if sol.temperature == "NaN" :
-            return f"Resort closed on :  {activity_date}"
+            return f"Planet closed on :  {activity_date}"
         
         if sol.temperature > self.average_temperature : # High Temperature
             if sol.opacity == "Sunny" :     #High Temp & Sunny

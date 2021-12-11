@@ -11,15 +11,15 @@ def main():
     '''
     Launch point for the Hitchhiker's Guide to the Red Planet
     '''
-    print("Loading weather_data!!!")
+    print("....Loading weather_data!!!")
     load_data = LoadData('mars-weather.csv')
     load_data.load()
-    print("Data loaded successfully!")
-    #weather_data = load_data.weather
+    print("....Data loaded successfully!\n")
+    
     # Loop to get valid input from the user
     while True:
         print("Please enter a date in the format yyyy-mm-dd  E.G. 2015-03-24")
-        print("Valid dates are between 2012-08-15 and 2018-02-27\n")
+        print("Valid dates are between 2012-08-15 and 2018-02-27")
         search_date = input("What date are you arriving on Mars?\n")
         
         date_validator = DateValidator()
@@ -78,9 +78,17 @@ def main():
         print("WARNING:  Your stay goes beyond the last valid holiday date")
         print("Hitchhiker's Guide recommends blasting off from the planet before this")
     
+    print("\n Thank you for choosing the Hitchhiker's Guide to the Red Planet")
 
 print("~"*40)
 print("  HITCHHIKER'S GUIDE TO THE RED PLANET")
+print("~"*40)
+print(" Welcome, time-travelling, inter-galactic holiday maker")
+print(" For your holiday to Mars (the Red Planet)")
+print(" Please choose a valid arrival date and the number of days you will be staying")
+print(" Valid arrival dates are between 15th August 2012 and 27th February 2018")
+print(" Dates entered must be of the format yyyy-mm-dd")
+print(" Enter your stay duration as a positive integer")
 print("~"*40)
 main()
 
