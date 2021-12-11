@@ -10,12 +10,12 @@ class Sol():
     '''
 
 
-    def __init__(self, earth_date, temperature, opacity, wind_speed):
+    def __init__(self, earth_date, temperature, air_pressure, opacity):
         '''
         Constructor
         '''
         self.earth_date = earth_date
         self.temperature = temperature
         self.opacity = opacity
-        self.wind_speed = wind_speed
+        self.air_pressure = air_pressure
         
