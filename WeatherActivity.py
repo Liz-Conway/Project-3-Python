@@ -50,5 +50,5 @@ class WeatherActivity():
             
         return f"{activity_date} :  {activity}"
     
-    
+
     
