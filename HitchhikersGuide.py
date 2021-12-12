@@ -6,6 +6,7 @@ Created on 7 Dec 2021
 from LoadData import LoadData
 from DateValidator import DateValidator
 from WeatherActivity import WeatherActivity
+from pickle import TRUE
 
 def main():
     '''
@@ -55,7 +56,7 @@ def main():
             # asking for the stay days
             
     while True:
-        show_weather = input("Would you like to see the temperature and air pressure details (Y/N)?\n").upper()
+        show_weather = input("Would you like to see the weather details (Y/N)?\n").upper()
         
         if show_weather == "Y" or show_weather == "N" :
             #valid data => continue with the code by breaking out of this while loop
@@ -83,6 +84,10 @@ def main():
     activities = []
     for weather_day in weather_days:
         day_activity = weather_activity.decideWeatherActivity(weather_day)
+        if show_weather == "Y":
+            day_activity += "  " + str(weather_day.temperature) + " degrees"
+            day_activity += "  " + str(weather_day.air_pressure) + " Pascal"
+            day_activity += "  " + weather_day.opacity
         activities.append(day_activity)
     
     # If the user wants the weather data then display the median temperature and air pressure
