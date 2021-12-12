@@ -53,6 +53,16 @@ def main():
             print(f"\n'{str(stay_days)}' is not a valid number")
             # Start this while loop again
             # asking for the stay days
+            
+    while True:
+        show_weather = input("Would you like to see the temperature and air pressure details (Y/N)?\n").upper()
+        
+        if show_weather == "Y" or show_weather == "N" :
+            #valid data => continue with the code by breaking out of this while loop
+            break
+        else:
+            print("\nPlease enter only 'Y' or 'N'")
+        
     
     # Congratulations you have valid data!!
     # The rest of the program starts here :
