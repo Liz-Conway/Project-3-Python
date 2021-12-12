@@ -16,7 +16,7 @@ def main():
     load_data.load()
     print("....Data loaded successfully!\n")
     
-    # Loop to get valid input from the user
+    # Loop to get valid date from the user
     while True:
         print("Please enter a date in the format yyyy-mm-dd  E.G. 2015-03-24")
         print("Valid dates are between 2012-08-15 and 2018-02-27")
@@ -25,26 +25,34 @@ def main():
         date_validator = DateValidator()
         valid_date = date_validator.validateDate(search_date)
         
-        if not valid_date :
-            # If the date is not valid
-            # Skip the rest of the loop
-            # and continue at the start of the while loop again
+        if valid_date :
+            # If the date is valid
+            # Break out of the while loop and 
+            # continue with the rest of the program
+            break
+        else :
+            print(f"\n'{search_date}' is not a valid date")
+            # Start the while loop again
             # asking for the date
-            continue
-        
+    
+    # If we get here the date is valid, so we can validate the stay_days
+    while True:    
         stay_days = input("How many days will you be staying (positive integers only)?\n")
         
         # https://www.pythonpool.com/python-check-if-string-is-integer/
         # isdigit() Only allows positive integers
         valid_days = stay_days.isdigit()
         
-        # If we get here the date is valid, so we only need to worry about the stay_days
         if valid_days :   # Days are valid
             # If the days entered are valid then
             # break out of this while loop and continue running the rest of the program
             # If the days entered is not a positive integer then
-            # the while loop will keep looping until a valid date and days are entered
+            # the while loop will keep looping until a valid stay day is entered
             break
+        else :
+            print(f"\n'{str(stay_days)}' is not a valid number")
+            # Start this while loop again
+            # asking for the stay days
     
     # Congratulations you have valid data!!
     # The rest of the program starts here :
@@ -79,17 +87,19 @@ def main():
         print("Hitchhiker's Guide recommends blasting off from the planet before this")
     
     print("\n Thank you for choosing the Hitchhiker's Guide to the Red Planet")
+    print("~"*80)
 
-print("~"*40)
-print("  HITCHHIKER'S GUIDE TO THE RED PLANET")
-print("~"*40)
+print("~"*80)
+spacer = " "*21
+print("~" + spacer + "HITCHHIKER'S GUIDE TO THE RED PLANET" + spacer + "~")
+print("~"*80)
 print(" Welcome, time-travelling, inter-galactic holiday maker")
 print(" For your holiday to Mars (the Red Planet)")
 print(" Please choose a valid arrival date and the number of days you will be staying")
 print(" Valid arrival dates are between 15th August 2012 and 27th February 2018")
 print(" Dates entered must be of the format yyyy-mm-dd")
 print(" Enter your stay duration as a positive integer")
-print("~"*40)
+print("~"*80)
 main()
 
 
