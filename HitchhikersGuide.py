@@ -85,6 +85,11 @@ def main():
         day_activity = weather_activity.decideWeatherActivity(weather_day)
         activities.append(day_activity)
     
+    # If the user wants the weather data then display the median temperature and air pressure
+    if show_weather == "Y":
+        print(f"Median Temperature :  {median_temperature} degrees")
+        print(f"Median Air Pressure :  {median_air_pressure} Pascal")
+    
     #Show the user the selected activities for their arrival and subsequent days
     print("\nCongratulations the following activities have been specially chosen for you:")
     for activity in activities:
