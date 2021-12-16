@@ -1,5 +1,8 @@
 # Mostly Harmless
 
+## Flow chart
+![Flow chart for Hitchhikers Guide to the Red Planet](documentation/flow-chart/hitchhikers-flow-chart.png)
+
 ## Data Coercion
 1. **Atmospheric Opacity**
 In the original dataset the Atmospheric Opacity was all set to "Sunny".  In order to provide meaningful searches that would return all of the different activities - every second Atmospheric Opacity reading was changed to "Cloudy"
