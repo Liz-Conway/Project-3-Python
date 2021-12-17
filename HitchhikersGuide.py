@@ -151,8 +151,8 @@ instructions = instruction + " Please choose a valid arrival date "
 instructions += "and the number of days you will be staying"
 print(instructions)
 valid_dates = " Valid arrival dates are between "
-valid_dates += Back.LIGHTMAGENTA_EX + "15th August 2012" + Back.BLACK
-valid_dates += " and " + Back.LIGHTMAGENTA_EX + "27th February 2018" + Back.BLACK
+valid_dates += Back.LIGHTMAGENTA_EX + "15th August 2012" + Back.RESET
+valid_dates += " and " + Back.LIGHTMAGENTA_EX + "27th February 2018" + Back.RESET
 print(valid_dates)
 date_format = " Dates entered must be of the format "
 date_format += Style.BRIGHT + "yyyy-mm-dd" + Style.NORMAL
