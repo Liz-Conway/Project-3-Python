@@ -81,7 +81,9 @@ def main():
             # asking for the stay days
 
     while True:
-        weather_ip = "Would you like to see the weather details (Y/N)?\n"
+        weather_ip = Fore.BLUE
+        weather_ip += "Would you like to see the weather details (Y/N)?"
+        weather_ip += Fore.RESET + "\n"
         show_weather = input(weather_ip).upper()
 
         if show_weather == "Y" or show_weather == "N":
@@ -89,7 +91,10 @@ def main():
             # breaking out of this while loop
             break
         else:
-            print("\nPlease enter only 'Y' or 'N'")
+            only_y_n = "\nPlease enter only " + Fore.GREEN
+            only_y_n += "Y" + Fore.RESET + " or " + Fore.GREEN
+            only_y_n += "N" + Fore.RESET
+            print(only_y_n)
 
     # Congratulations you have valid data!!
     # The rest of the program starts here :
