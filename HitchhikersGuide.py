@@ -6,6 +6,7 @@ Created on 7 Dec 2021
 from LoadData import LoadData
 from DateValidator import DateValidator
 from WeatherActivity import WeatherActivity
+from colorama import init, Fore, Back, Style
 
 
 def main():
@@ -127,21 +128,37 @@ def main():
     print("\n Thank you for choosing the Hitchhiker's Guide to the Red Planet")
     print("~"*80)
 
+init()
+# from colorama import Fore, Back, Style
+title = Back.RED + Fore.LIGHTMAGENTA_EX + Style.BRIGHT
+print(title)
+# print(Back.GREEN + "& with a green background")
+# print(Style.DIM + "Dimmed text")
+# print(Style.RESET_ALL)
 print("~"*80)
 spacer = " "*21
 print("~" + spacer + "HITCHHIKER'S GUIDE TO THE RED PLANET" + spacer + "~")
 print("~"*80)
 print(" Welcome, inter-galactic, time-travelling tourist")
 print(" For your holiday to Mars (the Red Planet)")
+print(Style.RESET_ALL)
+instruction = Fore.RED
 # PEP8 Validation split the text string
 # because it goes beyond 80 characters
-instructions = " Please choose a valid arrival date "
+# blue_on_yellow = Fore.BLUE + Back.YELLOW
+instructions = instruction + " Please choose a valid arrival date "
+#instructions += blue_on_yellow + "Blue on Yellow" + Style.RESET_ALL
 instructions += "and the number of days you will be staying"
 print(instructions)
-valid_dates = " Valid arrival dates are between 15th August 2012 "
-valid_dates += "and 27th February 2018"
+valid_dates = " Valid arrival dates are between "
+valid_dates += Back.LIGHTMAGENTA_EX + "15th August 2012" + Back.BLACK
+valid_dates += " and " + Back.LIGHTMAGENTA_EX + "27th February 2018" + Back.BLACK
 print(valid_dates)
-print(" Dates entered must be of the format yyyy-mm-dd")
-print(" Enter your stay duration as a positive integer")
-print("~"*80)
+date_format = " Dates entered must be of the format "
+date_format += Style.BRIGHT + "yyyy-mm-dd" + Style.NORMAL
+print(date_format)
+enter_duration = " Enter your stay duration as a "
+enter_duration += Style.BRIGHT + "positive integer" + Style.NORMAL
+print(enter_duration)
+print(Style.RESET_ALL + title + "~"*80 + Style.RESET_ALL)
 main()
