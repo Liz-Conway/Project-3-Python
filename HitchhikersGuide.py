@@ -6,7 +6,7 @@ Created on 7 Dec 2021
 from LoadData import LoadData
 from DateValidator import DateValidator
 from WeatherActivity import WeatherActivity
-from colorama import init, Fore, Back, Style
+from colorama import init, Fore, Back
 from colorama.ansi import Style
 
 

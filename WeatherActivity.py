@@ -3,6 +3,8 @@ Created on 1 Dec 2021
 
 @author: Liz-Conway
 '''
+from colorama import init, Fore, Back
+from colorama.ansi import Style
 
 
 class WeatherActivity():
@@ -61,4 +63,4 @@ class WeatherActivity():
                     # Low Temp, Cloudy, Low pressure
                     activity = "Play Sardines"
 
-        return f"{activity_date} :  {activity}"
+        return f"{activity_date} :  " + Fore.RED + f"{activity}" + Fore.RESET
