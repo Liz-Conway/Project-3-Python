@@ -56,8 +56,9 @@ def main():
     while True:
         # PEP8 Validation split the text string
         # because it goes beyond 80 characters
-        days_input = "How many days will you be staying "
-        days_input += "(positive integers only)?\n"
+        days_input = Fore.BLUE + "How many days will you be staying "
+        days_input += "(positive integers only)?" + Fore.RESET
+        days_input += "\n"
         stay_days = input(days_input)
 
         # https://www.pythonpool.com/python-check-if-string-is-integer/
@@ -73,7 +74,9 @@ def main():
             # until a valid stay day is entered
             break
         else:
-            print(f"\n'{str(stay_days)}' is not a valid number")
+            error_days = "\n" + Back.RED + f"{str(stay_days)}"
+            error_days += Back.RESET + " is not a valid number"
+            print(error_days)
             # Start this while loop again
             # asking for the stay days
 
