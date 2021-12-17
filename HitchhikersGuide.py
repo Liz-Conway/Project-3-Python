@@ -7,22 +7,35 @@ from LoadData import LoadData
 from DateValidator import DateValidator
 from WeatherActivity import WeatherActivity
 from colorama import init, Fore, Back, Style
+from colorama.ansi import Style
 
 
 def main():
     '''
     Launch point for the Hitchhiker's Guide to the Red Planet
     '''
-    print("....Loading weather_data!!!")
+    print(Fore.YELLOW + "....Loading weather_data!!!")
     load_data = LoadData('mars-weather.csv')
     load_data.load()
-    print("....Data loaded successfully!\n")
+    print("....Data loaded successfully!\n" + Style.RESET_ALL)
 
     # Loop to get valid date from the user
     while True:
-        print("Please enter a date in the format yyyy-mm-dd  E.G. 2015-03-24")
-        print("Valid dates are between 2012-08-15 and 2018-02-27")
-        search_date = input("What date are you arriving on Mars?\n")
+        date_format = Fore.MAGENTA
+        date_format += "Please enter a date in the format "
+        date_format += Style.BRIGHT + "yyyy-mm-dd" + Style.RESET_ALL
+        date_format += Fore.MAGENTA + "  E.G. 2015-03-24"
+        print(date_format)
+        valid_dates = "Valid dates are between "
+        valid_dates += Style.BRIGHT + "2012-08-15" + Style.RESET_ALL
+        valid_dates += Fore.MAGENTA
+        valid_dates += " and " + Style.BRIGHT + "2018-02-27"
+        valid_dates += Style.RESET_ALL
+        print(valid_dates)
+        search_input = Fore.BLUE
+        search_input += "What date are you arriving on Mars?"
+        search_input += Fore.RESET
+        search_date = input(search_input + "\n")
 
         date_validator = DateValidator()
         valid_date = date_validator.validateDate(search_date)
@@ -33,7 +46,9 @@ def main():
             # continue with the rest of the program
             break
         else:
-            print(f"\n'{search_date}' is not a valid date")
+            error_date = "\n" + Back.RED + f"{search_date}" + Back.RESET
+            error_date += " is not a valid date"
+            print(error_date)
             # Start the while loop again
             # asking for the date
 
