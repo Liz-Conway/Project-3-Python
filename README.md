@@ -1,7 +1,20 @@
 # Mostly Harmless
 
 ## Flow chart
-![Flow chart for Hitchhikers Guide to the Red Planet](documentation/flow-chart/hitchhikers-flow-chart.png)
+###Key
+
+|Type|Symbol|
+| --- | --- |
+|Input | ![Input symbol](documentation/flow-chart/input.png)|
+|Output |![Output symbol](documentation/flow-chart/output.png)|
+|Process |![Process symbol](documentation/flow-chart/process.png)|
+|Code |![Code symbol](documentation/flow-chart/code.png)|
+
+Input :  ![Inputs](documentation/flow-chart/input.png)
+Output
+<img alt="Flow chart for Hitchhikers Guide to the Red Planet" src="documentation/flow-chart/hitchhikers-flow-chart.png" width="100%">
+
+
 
 ## Data Coercion
 1. **Atmospheric Opacity**
