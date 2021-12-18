@@ -167,7 +167,7 @@ def main():
         print(blast_off)
 
     print("\n Thank you for choosing the Hitchhiker's Guide to the Red Planet")
-    print(title + "~"*80)
+    print(title + "~"*80 + Style.RESET_ALL)
 
 init()
 # from colorama import Fore, Back, Style
