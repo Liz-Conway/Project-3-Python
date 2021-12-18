@@ -147,15 +147,18 @@ def main():
     # will go beyond the dates in the dataset
     # print a message to the user informing them of this
     if int(stay_days) > len(activities):
-        print("WARNING:  Your stay goes beyond the last valid holiday date")
+        beyond_last_valid = Back.RED
+        beyond_last_valid += "WARNING:  Your stay goes beyond "
+        beyond_last_valid += "the last valid holiday date"
+        print(beyond_last_valid)
         # PEP8 Validation split the text string
         # because it goes beyond 80 characters
         blast_off = "Hitchhiker's Guide recommends blasting off "
-        blast_off += "from the planet before this"
+        blast_off += "from the planet before this" + Back.RESET
         print(blast_off)
 
     print("\n Thank you for choosing the Hitchhiker's Guide to the Red Planet")
-    print("~"*80)
+    print(title + "~"*80)
 
 init()
 # from colorama import Fore, Back, Style
