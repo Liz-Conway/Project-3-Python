@@ -124,9 +124,15 @@ def main():
     # If the user wants the weather data
     # then display the median temperature and air pressure
     if show_weather == "Y":
-        print(f"Median Temperature :  {median_temperature} degrees")
-        print(f"Median Air Pressure :  {median_air_pressure} Pascal")
-
+        median_temperature_display = "Median Temperature :  "
+        median_temperature_display += Fore.CYAN + f"{median_temperature}"
+        median_temperature_display += " degrees" + Fore.RESET
+        print(median_temperature_display)
+        median_pressure_display = "Median Air Pressure :  "
+        median_pressure_display += Fore.GREEN + f"{median_air_pressure}"
+        median_pressure_display += " Pascal" + Fore.RESET
+        print(median_pressure_display)
+        
     # PEP8 Validation split the text string
     # because it goes beyond 80 characters
     congrats = "\nCongratulations the following activities"
