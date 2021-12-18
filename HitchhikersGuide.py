@@ -116,9 +116,18 @@ def main():
     for weather_day in weather_days:
         day_activity = weather_activity.decideWeatherActivity(weather_day)
         if show_weather == "Y":
-            day_activity += "  " + str(weather_day.temperature) + " degrees"
-            day_activity += "  " + str(weather_day.air_pressure) + " Pascal"
-            day_activity += "  " + weather_day.opacity
+            temp_col = Fore.CYAN + Style.BRIGHT + Back.BLUE
+            press_col = Fore.GREEN + Style.BRIGHT + Back.BLUE
+            opacity_col = Fore.LIGHTYELLOW_EX + Back.BLUE
+            day_activity += "  " + temp_col 
+            day_activity += str(weather_day.temperature) 
+            day_activity += " degrees" + Back.RESET
+            day_activity += "  " + press_col 
+            day_activity += str(weather_day.air_pressure) 
+            day_activity += " Pascal" + Back.RESET
+            day_activity += "  " + opacity_col 
+            day_activity += weather_day.opacity + Fore.RESET + Back.RESET
+            day_activity += Style.RESET_ALL
         activities.append(day_activity)
 
     # If the user wants the weather data
