@@ -65,7 +65,7 @@ def main():
         # isdigit() Only allows positive integers
         valid_days = stay_days.isdigit()
 
-        if valid_days:   # Days are valid
+        if valid_days and int(stay_days) > 0:   # Days are valid
             # If the days entered are valid then
             # break out of this while loop and continue running
             # the rest of the program
@@ -75,7 +75,7 @@ def main():
             break
         else:
             error_days = "\n" + Back.RED + f"{str(stay_days)}"
-            error_days += Back.RESET + " is not a valid number"
+            error_days += Back.RESET + " is not a valid positive integer"
             print(error_days)
             # Start this while loop again
             # asking for the stay days
@@ -104,7 +104,6 @@ def main():
 
         # Get the median temperature for the entire set of data
         median_temperature = load_data.get_median_temperature()
-
         # Get the median air pressure for the entire set of data
         median_air_pressure = load_data.get_median_air_pressure()
 

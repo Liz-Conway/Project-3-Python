@@ -1,11 +1,16 @@
 ![Mars dataset banner](documentation/requirements/images/mars-data-banner.png)
 # Hitchhiker's guide to the Red Planet
 ## Overview
+Imagine you are going to travel back in the past and go on holidays to Mars with a group of your friends.  You arrive on the Red Planet with your swimming togs and loads of sun cream, only to realise that everyone else is carrying skis and dressed in furs.  Most of your mates start laughing as it hits you that at certain times of the year the temperature on Mars can get as low as -35 degrees at the warmest part of the day.
+As most of your mates are sniggering your best friend zips you a small command line app, and says "Next time you want to avoid a 40 month round trip to pick up your skis check this first".
+You read your z-mail and find an app titled **Hitchhiker's guide to the Red Planet**
+
 ### Who is this app for?
 This command line app is for all inter-galactic time-travelling tourists who wish to holiday on Mars at a specific date in the past.
 
 ### Where does the data come from?
 ![Rover](documentation/requirements/images/rover.png)
+
 This command line tool in python explores real-time data representing the weather conditions on Mars from Sol 1.  The data was measured and transmitted via the Rover Envionmental Monitoris Station (REMS) onboard the Curiosity Rover.  This data was made public by the NASA's Mars Science Laboratory and the Centro de Astrobiologia (CSIC-INTA).  
  
 ### What does it do?
