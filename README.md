@@ -162,6 +162,42 @@ This project is deployed to [Heroku](https://hitchikers-guide-to-red-planet.hero
     - **Colorama** is used to add colour to the outputted text.
 
 
+## Contributing
+
+### Clone
+1. Firstly you will need to clone this repository by running the `git clone https://github.com/Liz-Conway/Project-3-Python.git` command
+2. After you've that you'll need to make sure that you have a package manager such as **npm**  installed
+   You can get **npm** by installing Node from [here](https://nodejs.org/en/)
+3. Make sure that you have **python 3** installed. You can install this by running the following: `npm install -g python3` .  This also may require sudo on Mac/Linux
+4. Make sure that you have **colorama** installed. You can install this by running the following: `npm install -g colorama`  This also may require sudo on Mac/Linux
+5. Once **Python** and **colorama** are installed run `python3 run.py` in the root directory (the one where run.py is).
+6. The project will now run in your terminal
+7. Make changes to the code and if you think it belongs in here then just submit a pull request.
+
+### Fork
+1. Log into [Github](https://github.com/)
+2. Search for **Hitchhiker** and choose to go to `Liz-Conway/Project-3-Python`.
+3. Click on the *Fork* button on the top right hand side of the screen.
+4. This will make a copy of **Hitchhikers Guide to the Red Planet** in your github account.
+5. In your version of Hitchhikers Guide to the Red Planet click on the `Code` button and copy the clone text.
+6. Then, you will need to clone this repository by pasting the command you just copied into a terminal window on your computer and running it.  This will create a copy of Hitchhikers Guide to the Red Planet from your github account on your computer.
+7. After you've that you'll need to make sure that you have a package manager such as **npm**  installed
+   You can get **npm** by installing Node from [here](https://nodejs.org/en/)
+8. Make sure that you have **python3** installed. You can install this by running the following: `npm install -g python3`  This also may require sudo on Mac/Linux
+9. Make sure that you have **colorama** installed. You can install this by running the following: `npm install -g colorama`  This also may require sudo on Mac/Linux
+10. Once **Python** and **colorama** are installed run `python3 run.py` in the root directory (the one where run.py is).
+11. The project will now run on your terminal
+12. Make changes to the code and run `git push` to save those changes to your github account.
+
+
+### Cloning versus Forking
+The major difference between cloning and forking is where your updates go when you perform a `git push`.
+
+With cloning you are pushing the updates to the `Liz-Conway/Project-3-Python` repo on github.
+
+With forking you are pushing the updates to your own Social Story Animation repo on github.
+
+
 ## Credit
 
 | Code purpose                    | Author               | Link                                                                               |
