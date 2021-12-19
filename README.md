@@ -103,6 +103,60 @@ Sol.py
 **WeatherActivity.py**
 ![WeatherActivity.py validation](documentation/validation/pep8-weatheractivity.png)
 
+### Documentation  
+- README.md :  Comprehensive overview of the Hitchhikers Guide to the Red planet application detailing how it works, what its features are, the technologies involved and all the design decisions that were made in creating this command line application.
+- [Vision doc](documentation/requirements/vision-hitchhikers-guide-to-the-red-planet.docx) :  Business needs and feature list.
+ 
+
+### Deployment
+This project is deployed to [Heroku](https://hitchikers-guide-to-red-planet.herokuapp.com/)
+
+1. Push the code to Github using `git push`.
+
+2. Go to the Heroku Dashboard [Heroku Dashboard](https://dashboard.heroku.com/apps)
+
+
+
+3. In the Heroku Dashboard, click on the *Create new app* button.
+![Create new App](documentation/deploy/heroku-create-new-app.png)
+
+
+4. Enter an app name (*hitchikers-guide-to-red-planet*) and region (*Europe*) and click the *Create app* button.
+![Create app](documentation/deploy/heroku-create-app.png)
+
+
+5. Click on *Settings* tab
+![Heroku Settings](documentation/deploy/heroku-settings.png)
+6. In the 'Config Vars' section, click on *Reveal Config Vars*.  Add a key of **PORT** and a value of **8000**.  Click *Add* button.
+![Reveal config vars](documentation/deploy/heroku-reveal-config-vars.png)
+![Config vars](documentation/deploy/heroku-config-vars.png)
+7. In the 'Build Packs' section, click on *Add Build Pack* button.  Select **Python**.  Click *Save Changes* button.
+![Build Packs section](documentation/deploy/heroku-add-buildpack.png)
+![Python & nodejs buildpacks](documentation/deploy/heroku-buildpacks.png)
+8. Click on *Add Build Pack* button again and select **nodejs**. Click *Save Changes* button.
+![Build packs added](documentation/deploy/heroku-buildpacks-added.png)
+9. Click on *Deploy* tab.
+![Heroku deploy tab](documentation/deploy/heroku-deploy.png)
+10. Choose Deployment Method *Github*.
+![Heroku deployment method](documentation/deploy/heroku-deployment-method.png)
+11. In *Connect to Github* section, type **Hitchhiker** in the *repo-name* box and click *Search* button.
+![Search github](documentation/deploy/heroku-search-github.png)
+12. Click the *Connect* button next to **Liz-Conway/Project-3-Python**.
+![Connect to github](documentation/deploy/heroku-hitchhiker-connect.png)
+13. Heroku app is now connected to the Github repository.
+![Heroku connected to Github](documentation/deploy/heroku-connected-github.png)
+14. Go to *Manual deploy* section, ensure the branch to deploy is **main**.  Click on *Deploy Branch* button.
+![Manual deploy app](documentation/deploy/heroku-manual-deploy.png)
+15. Once the app is successfully deployed click on the *view* button, or navigate to [Hitchhikers Guide to the Red Planet](https://hitchikers-guide-to-red-planet.herokuapp.com/) to run the application.
+![App successfully deployed](documentation/deploy/heroku-successful-deploy.png)
+16. Click on the RUN PROGRAM button to run the application.
+![Heroku run app](documentation/deploy/heroku-run-program.png)
+17. Once the app has been deployed you can access it by navigating to [Hitchhikers Guide to the Red Planet](https://hitchikers-guide-to-red-planet.herokuapp.com/) to run the application.
+
+
+
+
+
 ## Credit
 
 | Code purpose                    | Author               | Link                                                                               |
