@@ -39,30 +39,6 @@ Input :  ![Inputs](documentation/flow-chart/input.png)
 Output
 <img alt="Flow chart for Hitchhikers Guide to the Red Planet" src="documentation/flow-chart/hitchhikers-flow-chart.png" width="100%">
 
-##Validation
-Source code was validated with [PEP8 Validator](http://pep8online.com/).
-**run.py**
-![run.py validation](documentation/validation/pep8-run.png)
-
-**HitchhikersGuide.py**
-
-![Hitchhikers Guide validation](documentation/validation/pep8-hitchhikersguide.png)
-
-**LoadData.py**
-![LoadData.py validation](documentation/validation/pep8-loaddata.png)
-
-**DateValidator.py**
-![DateValidator.py validation](documentation/validation/pep8-datevalidator.png)
-
-**DateUtil.py**
-![DateUtil.py validation](documentation/validation/pep8-dateutil.png)
-
-Sol.py
-![Sol.py validation](documentation/validation/pep8-sol.png)
-
-**WeatherActivity.py**
-![WeatherActivity.py validation](documentation/validation/pep8-weatheractivity.png)
-
 
 ## Design Decisions
 ### Data Coercion
@@ -86,6 +62,46 @@ The [colorama](https://pypi.org/project/colorama/) python module was used to add
     - The initial screen gives instructions on how to use the Hitchhikers Guide to the Red Planet.
     - Colours are used to divide the information into readable, distinguishable blocks.  This makes it easier for the tourist to glean information from the output they are presented with.
     - Invalid inputs are highlighted immediately and explained as to why they are invalid.
+
+## Software Development Process
+### Version Control 
+**Git** is used for version control of this project
+- Git commit message prefix convention denoting the type of change made in this commit:
+    - DOC: Documentation
+    - FEAT: Feature
+    - FIX: Bugfix
+    - STYLE: Changes to CSS
+    - REFACTOR: Where changes are made that do not change the functionality.
+- Git messages will be no longer than 50 characters long.
+
+**GitHub** is used as the central version control repository for this project.
+
+### Testing 
+Testing is documented in the [Testing document](documentation/test/TESTING.md)
+
+### Validation
+Source code was validated with [PEP8 Validator](http://pep8online.com/).
+**run.py**
+![run.py validation](documentation/validation/pep8-run.png)
+
+**HitchhikersGuide.py**
+
+![Hitchhikers Guide validation](documentation/validation/pep8-hitchhikersguide.png)
+
+**LoadData.py**
+![LoadData.py validation](documentation/validation/pep8-loaddata.png)
+
+**DateValidator.py**
+![DateValidator.py validation](documentation/validation/pep8-datevalidator.png)
+
+**DateUtil.py**
+![DateUtil.py validation](documentation/validation/pep8-dateutil.png)
+
+Sol.py
+![Sol.py validation](documentation/validation/pep8-sol.png)
+
+**WeatherActivity.py**
+![WeatherActivity.py validation](documentation/validation/pep8-weatheractivity.png)
 
 ## Credit
 
