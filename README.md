@@ -153,8 +153,13 @@ This project is deployed to [Heroku](https://hitchikers-guide-to-red-planet.hero
 ![Heroku run app](documentation/deploy/heroku-run-program.png)
 17. Once the app has been deployed you can access it by navigating to [Hitchhikers Guide to the Red Planet](https://hitchikers-guide-to-red-planet.herokuapp.com/) to run the application.
 
+## Technology Used
 
-
+### Some of the technology used includes:
+- [Python](https://www.python.org/)
+    - **Python** is used to develop the Hitchhikers Guide to the Red Planet command line app.
+- [Colorama](https://pypi.org/project/colorama/)
+    - **Colorama** is used to add colour to the outputted text.
 
 
 ## Credit
