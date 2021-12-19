@@ -63,11 +63,29 @@ Sol.py
 **WeatherActivity.py**
 ![WeatherActivity.py validation](documentation/validation/pep8-weatheractivity.png)
 
-## Data Coercion
+
+## Design Decisions
+### Data Coercion
 1. **Atmospheric Opacity**
 In the original dataset the Atmospheric Opacity was all set to "Sunny".  In order to provide meaningful searches that would return all of the different activities - every second Atmospheric Opacity reading was changed to "Cloudy"
 2. **Date continuity**
 There is a date gap where the second last date is '2012-08-15' and the last date is '2012-08-07' - a gap of one week.  The last record in the original data was removed in order to maintain a continuous set of readings.
+
+### Colours
+The [colorama](https://pypi.org/project/colorama/) python module was used to add some colour to the screen, and divide up the sections to make it easier to read.
+
+### Usability
+- **Suitability for purpose**
+    - Hitchhikers Guide to the Red Planet provides textual information to the viewer.
+    - The activities and weather information provided by Hithchikers Guide to the Red Planet is derived from the Mars weather dataset provided publicly by NASA.
+    - The weather information is as accurate as the data provided in the Mars weather dataset.
+- **Ease of use**
+    - A simple easy-to-use application focusing on reducing the 'cognitive load' on viewers.  The system is designed so that the viewer does not have to remember large amounts of detail.
+    - If a tourist makes and invalid input this is explained and they are given the chance to re-enter the input.
+- **Information Display** 
+    - The initial screen gives instructions on how to use the Hitchhikers Guide to the Red Planet.
+    - Colours are used to divide the information into readable, distinguishable blocks.  This makes it easier for the tourist to glean information from the output they are presented with.
+    - Invalid inputs are highlighted immediately and explained as to why they are invalid.
 
 ## Credit
 
