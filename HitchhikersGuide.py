@@ -104,14 +104,19 @@ def main():
 
         # Get the median temperature for the entire set of data
         median_temperature = load_data.get_median_temperature()
-    
+
         # Get the median air pressure for the entire set of data
         median_air_pressure = load_data.get_median_air_pressure()
-    
+
         # WeatherActivity uses the median temperature and air pressure
         # to determine whether a particular day's value is "High" or "Low"
-        weather_activity = WeatherActivity(median_temperature, median_air_pressure)
-    
+        # PEP8 validation - creating duplicate variables with tiny names
+        # because PEP8 complains about both long variable names
+        # AND splitting the line using a continuation character
+        med_temp = median_temperature
+        med_press = median_air_pressure
+        weather_activity = WeatherActivity(med_temp, med_press)
+
         # Retrieve the activities for the entered date and stay days
         activities = []
         for weather_day in weather_days:
@@ -120,17 +125,17 @@ def main():
                 temp_col = Fore.CYAN + Style.BRIGHT + Back.BLUE
                 press_col = Fore.GREEN + Style.BRIGHT + Back.BLUE
                 opacity_col = Fore.LIGHTYELLOW_EX + Back.BLUE
-                day_activity += "  " + temp_col 
-                day_activity += str(weather_day.temperature) 
+                day_activity += "  " + temp_col
+                day_activity += str(weather_day.temperature)
                 day_activity += " degrees" + Back.RESET
-                day_activity += "  " + press_col 
-                day_activity += str(weather_day.air_pressure) 
+                day_activity += "  " + press_col
+                day_activity += str(weather_day.air_pressure)
                 day_activity += " Pascal" + Back.RESET
-                day_activity += "  " + opacity_col 
+                day_activity += "  " + opacity_col
                 day_activity += weather_day.opacity + Fore.RESET + Back.RESET
                 day_activity += Style.RESET_ALL
             activities.append(day_activity)
-    
+
         # If the user wants the weather data
         # then display the median temperature and air pressure
         if show_weather == "Y":
@@ -142,7 +147,7 @@ def main():
             median_pressure_display += Fore.GREEN + f"{median_air_pressure}"
             median_pressure_display += " Pascal" + Fore.RESET
             print(median_pressure_display)
-            
+
         # PEP8 Validation split the text string
         # because it goes beyond 80 characters
         congrats = "\nCongratulations the following activities"
@@ -152,7 +157,7 @@ def main():
         print(congrats)
         for activity in activities:
             print(f"    {activity}")
-    
+
         # If the user choses a valid date but the number of stay days
         # will go beyond the dates in the dataset
         # print a message to the user informing them of this
@@ -178,12 +183,8 @@ def main():
     print(title + "~"*80 + Style.RESET_ALL)
 
 init()
-# from colorama import Fore, Back, Style
 title = Back.RED + Fore.LIGHTMAGENTA_EX + Style.BRIGHT
 print(title)
-# print(Back.GREEN + "& with a green background")
-# print(Style.DIM + "Dimmed text")
-# print(Style.RESET_ALL)
 print("~"*80)
 spacer = " "*21
 print("~" + spacer + "HITCHHIKER'S GUIDE TO THE RED PLANET" + spacer + "~")
@@ -196,12 +197,13 @@ instruction = Fore.RED
 # because it goes beyond 80 characters
 # blue_on_yellow = Fore.BLUE + Back.YELLOW
 instructions = instruction + " Please choose a valid arrival date "
-#instructions += blue_on_yellow + "Blue on Yellow" + Style.RESET_ALL
+# instructions += blue_on_yellow + "Blue on Yellow" + Style.RESET_ALL
 instructions += "and the number of days you will be staying"
 print(instructions)
 valid_dates = " Valid arrival dates are between "
 valid_dates += Back.LIGHTMAGENTA_EX + "15th August 2012" + Back.RESET
-valid_dates += " and " + Back.LIGHTMAGENTA_EX + "27th February 2018" + Back.RESET
+valid_dates += " and " + Back.LIGHTMAGENTA_EX
+valid_dates += "27th February 2018" + Back.RESET
 print(valid_dates)
 date_format = " Dates entered must be of the format "
 date_format += Style.BRIGHT + "yyyy-mm-dd" + Style.NORMAL
