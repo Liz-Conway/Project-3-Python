@@ -1,4 +1,25 @@
-# Mostly Harmless
+![Mars dataset banner](documentation/requirements/images/mars-data-banner.png)
+# Hitchhiker's guide to the Red Planet
+## Overview
+### Who is this app for?
+This command line app is for all inter-galactic time-travelling tourists who wish to holiday on Mars at a specific date in the past.
+
+### Where does the data come from?
+![Rover](documentation/requirements/images/rover.png)
+This command line tool in python explores real-time data representing the weather conditions on Mars from Sol 1.  The data was measured and transmitted via the Rover Envionmental Monitoris Station (REMS) onboard the Curiosity Rover.  This data was made public by the NASA's Mars Science Laboratory and the Centro de Astrobiologia (CSIC-INTA).  
+ 
+### What does it do?
+ The environmental magnitudes given in this dataset are obtained from the values read by the Rover Environmental Monitoring Station (REMS) on board the Mars Science Laboratory (MSL) rover on mars.  This dataset provides the environmental magnitudes at REMS location, so MSL rover influences those magnitudes (rover position, rover temperature, rover orientation, rover shade, dust depositions on the rover, etc.)
+ 
+This examines the data in a fictional response to creating a critical guide to hitch hiking on the Red Planet.  The aim is to interrogate the data and create the best possible outcomes to holidaying in Mars.  The reason this has been selected is to use something like NASA's data and interrogate the data set into meaningful information and creating actionable insights based upon this.
+  
+ It can be a minefield for people who struggle with the daily nuances of communication and need a reference and guide to navigate proper interpretation of the written and unspoken  word.  The aim is to evoke a neural response and consequently influence behaviour and outcome.
+ 
+ ## How does it work
+This a unique way of interpreting real world data using a command line interface in python.  This application will attempt to find out what holiday activities are best suited on the Red planet in a fictional sense.  It will give the applicable holiday activities for any given day according to the weather that is experienced on that particular day.  The aim is to interrogate the dataset and come up with the best laid plans for enjoying a holiday.  The simple command line interface is OS independent and not pertaining to any computer architectue and could be run in any environment. 
+
+![Table of available activities](/home/fintan/Documents/Liz/Code Institute/Projects/Project-3-Python/documentation/requirements/images/activity-table.png)
+
 
 ## Features
 ### Known Bugs
@@ -27,7 +48,7 @@ Source code was validated with [PEP8 Validator](http://pep8online.com/).
 
 ![Hitchhikers Guide validation](documentation/validation/pep8-hitchhikersguide.png)
 
-LoadData.py
+**LoadData.py**
 ![LoadData.py validation](documentation/validation/pep8-loaddata.png)
 
 **DateValidator.py**
