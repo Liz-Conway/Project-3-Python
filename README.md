@@ -1,7 +1,11 @@
 # Mostly Harmless
 
+## Features
+### Known Bugs
+Sometimes the Mars Rover did not return any data for a particular day.  Thus there is no entry in the data for that day.  If a tourist enters a "missing day" as their arrival date, then a warning message is shown.  Otherwise the impact of missing some days in the dataset means that occassionally the output will contain skipped days, e.g. going from Saturday 8th September to Monday 10th September.
+
 ## Flow chart
-###Key
+### Key
 
 |Type|Symbol|
 | --- | --- |
