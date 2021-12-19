@@ -99,72 +99,80 @@ def main():
     # Congratulations you have valid data!!
     # The rest of the program starts here :
     # Retrieve the weather for the entered dates
-    weather_days = load_data.search_for_days(search_date, stay_days)
+    try:
+        weather_days = load_data.search_for_days(search_date, stay_days)
 
-    # Get the median temperature for the entire set of data
-    median_temperature = load_data.get_median_temperature()
-
-    # Get the median air pressure for the entire set of data
-    median_air_pressure = load_data.get_median_air_pressure()
-
-    # WeatherActivity uses the median temperature and air pressure
-    # to determine whether a particular day's value is "High" or "Low"
-    weather_activity = WeatherActivity(median_temperature, median_air_pressure)
-
-    # Retrieve the activities for the entered date and stay days
-    activities = []
-    for weather_day in weather_days:
-        day_activity = weather_activity.decideWeatherActivity(weather_day)
+        # Get the median temperature for the entire set of data
+        median_temperature = load_data.get_median_temperature()
+    
+        # Get the median air pressure for the entire set of data
+        median_air_pressure = load_data.get_median_air_pressure()
+    
+        # WeatherActivity uses the median temperature and air pressure
+        # to determine whether a particular day's value is "High" or "Low"
+        weather_activity = WeatherActivity(median_temperature, median_air_pressure)
+    
+        # Retrieve the activities for the entered date and stay days
+        activities = []
+        for weather_day in weather_days:
+            day_activity = weather_activity.decideWeatherActivity(weather_day)
+            if show_weather == "Y":
+                temp_col = Fore.CYAN + Style.BRIGHT + Back.BLUE
+                press_col = Fore.GREEN + Style.BRIGHT + Back.BLUE
+                opacity_col = Fore.LIGHTYELLOW_EX + Back.BLUE
+                day_activity += "  " + temp_col 
+                day_activity += str(weather_day.temperature) 
+                day_activity += " degrees" + Back.RESET
+                day_activity += "  " + press_col 
+                day_activity += str(weather_day.air_pressure) 
+                day_activity += " Pascal" + Back.RESET
+                day_activity += "  " + opacity_col 
+                day_activity += weather_day.opacity + Fore.RESET + Back.RESET
+                day_activity += Style.RESET_ALL
+            activities.append(day_activity)
+    
+        # If the user wants the weather data
+        # then display the median temperature and air pressure
         if show_weather == "Y":
-            temp_col = Fore.CYAN + Style.BRIGHT + Back.BLUE
-            press_col = Fore.GREEN + Style.BRIGHT + Back.BLUE
-            opacity_col = Fore.LIGHTYELLOW_EX + Back.BLUE
-            day_activity += "  " + temp_col 
-            day_activity += str(weather_day.temperature) 
-            day_activity += " degrees" + Back.RESET
-            day_activity += "  " + press_col 
-            day_activity += str(weather_day.air_pressure) 
-            day_activity += " Pascal" + Back.RESET
-            day_activity += "  " + opacity_col 
-            day_activity += weather_day.opacity + Fore.RESET + Back.RESET
-            day_activity += Style.RESET_ALL
-        activities.append(day_activity)
-
-    # If the user wants the weather data
-    # then display the median temperature and air pressure
-    if show_weather == "Y":
-        median_temperature_display = "Median Temperature :  "
-        median_temperature_display += Fore.CYAN + f"{median_temperature}"
-        median_temperature_display += " degrees" + Fore.RESET
-        print(median_temperature_display)
-        median_pressure_display = "Median Air Pressure :  "
-        median_pressure_display += Fore.GREEN + f"{median_air_pressure}"
-        median_pressure_display += " Pascal" + Fore.RESET
-        print(median_pressure_display)
-        
-    # PEP8 Validation split the text string
-    # because it goes beyond 80 characters
-    congrats = "\nCongratulations the following activities"
-    congrats += " have been specially chosen for you:"
-    # Show the user the selected activities for their
-    # arrival and subsequent days
-    print(congrats)
-    for activity in activities:
-        print(f"    {activity}")
-
-    # If the user choses a valid date but the number of stay days
-    # will go beyond the dates in the dataset
-    # print a message to the user informing them of this
-    if int(stay_days) > len(activities):
-        beyond_last_valid = Back.RED
-        beyond_last_valid += "WARNING:  Your stay goes beyond "
-        beyond_last_valid += "the last valid holiday date"
-        print(beyond_last_valid)
+            median_temperature_display = "Median Temperature :  "
+            median_temperature_display += Fore.CYAN + f"{median_temperature}"
+            median_temperature_display += " degrees" + Fore.RESET
+            print(median_temperature_display)
+            median_pressure_display = "Median Air Pressure :  "
+            median_pressure_display += Fore.GREEN + f"{median_air_pressure}"
+            median_pressure_display += " Pascal" + Fore.RESET
+            print(median_pressure_display)
+            
         # PEP8 Validation split the text string
         # because it goes beyond 80 characters
-        blast_off = "Hitchhiker's Guide recommends blasting off "
-        blast_off += "from the planet before this" + Back.RESET
-        print(blast_off)
+        congrats = "\nCongratulations the following activities"
+        congrats += " have been specially chosen for you:"
+        # Show the user the selected activities for their
+        # arrival and subsequent days
+        print(congrats)
+        for activity in activities:
+            print(f"    {activity}")
+    
+        # If the user choses a valid date but the number of stay days
+        # will go beyond the dates in the dataset
+        # print a message to the user informing them of this
+        if int(stay_days) > len(activities):
+            beyond_last_valid = Back.RED
+            beyond_last_valid += "WARNING:  Your stay goes beyond "
+            beyond_last_valid += "the last valid holiday date"
+            print(beyond_last_valid)
+            # PEP8 Validation split the text string
+            # because it goes beyond 80 characters
+            blast_off = "Hitchhiker's Guide recommends blasting off "
+            blast_off += "from the planet before this" + Back.RESET
+            print(blast_off)
+
+    except IndexError as e:
+        warning = "\n" + Back.RED + Fore.BLACK
+        warning += f"Mars Rover was not operational on {search_date}\n"
+        warning += "There is no data available for this arrival date"
+        warning += Style.RESET_ALL
+        print(warning)
 
     print("\n Thank you for choosing the Hitchhiker's Guide to the Red Planet")
     print(title + "~"*80 + Style.RESET_ALL)
