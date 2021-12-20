@@ -153,25 +153,35 @@ I decided to use a script module (HitchhikersGuide.py) to launch the Hitchhiker'
 A Sol is a Martian day.
 This class holds the temperature, air pressure, opacity and the equivalent date on earth.
 One Sol class will be created for every row of data in the Mars weather dataset.
+
 #### Fields
 **earth_date** : The date on Earth relating to this Martian Sol.
+
 **temperature** : The temperature for this Sol.
-**opacity** : Whether it is Sunny or Cloudy
+
+**opacity** : Whether it is Sunny or Cloudy.
+
 **air_pressure** : The air pressure for this Sol.
 
 ### LoadData.py
 This class is responsible for loading and accessing the data.
+
 #### Fields
 **csv_file** : Stores a reference to the CSV file which contains all the Mars weather data.  This field is passed into the constructor when the LoadData class is first created.
+
 **weather** : A list which is used to store a Sol for each day in the Mars weather data CSV file.  This is the internal data that the Hitchhiker's Guide to the Red Planet app uses.
+
 **max_temp** : Stores the maximum temperature from the Mars weather data.  Initially set in the constructor to be extremely low.  Will be used in conjunction with min_temp to calculate the median temperature.
+
 **min_temp** : Stores the minimum temperature from the Mars weather data.  Initially set in the constructor to be extremely high.  Will be used in conjunction with max_temp to calculate the median temperature.
+
 **max_pressure** : Stores the maximum air pressure from the Mars weather data.  Initially set in the constructor to be extremely low.  Will be used in conjunction with min_pressure to calculate the median air pressure.
+
 **min_pressure** : Stores the minimum air pressure from the Mars weather data.  Initially set in the constructor to be extremely high.  Will be used in conjunction with max_pressure to calculate the median air pressure.
 
 #### Functions
 **load()** : This method reads the data from the Mars weather CSV file line by line, one line for each day (Sol).  It skips the first line which holds the column titles.  
-For each line it reads in this method creates a list (array).  Each element in this list is a piece of weather data.  This method then extracts the appropriate pieces of data and creates a Sol object, passing the data into the Sol object.  This method then adds the Sol to a weather list.  When the *load()* method has finished reading all of the Mars weather CSV file, the weather list will contain a Sol for each day that was in the CSV file.
+For each line it reads in this method creates a list (array).  Each element in this list is a piece of weather data.  This method then extracts the appropriate pieces of data and creates a Sol object, passing the data into the Sol object.  This method then adds the Sol to a weather list.  When the `load()` method has finished reading all of the Mars weather CSV file, the weather list will contain a Sol for each day that was in the CSV file.
 
 As this method goes through each days data, it checks to see if the temperature is higher than any previously loaded, if so it sets the maximum temperature to this temperature.  It does the same for minimum temperature, maximum air pressure and minimum air pressure.  When the data has all been loaded, this method will have stored the maximum temperature, the minimum temperature, the maximum air pressure and the minimum air pressure from the entire dataset.
 
@@ -184,16 +194,21 @@ The number of Sols returned is determined by the *days* parameter passed into th
 If the search_date is not found then an IndexError is thrown instead.  This error is handled by the calling class.
 
 ### WeatherActivity
+
 #### Fields
+
 **average_temperature** :  The average temperature for the entire dataset.  This is passed into the WeatherActivity class in its constructor.  This field is used to determine if the temperature for a particular Sol is "High" or "Low".
+
 **average_air_pressure** :  The average air pressure for the entire dataset.  This is passed into the WeatherActivity class in its constructor.  This field is used to determine if the air pressure for a particular Sol is "High" or "Low".
 
 #### Functions
 decideWeatherActivity(): Calculates the holiday activity applicable for the passed in Sol. This is done by comparing the temparature and air pressure with the median temperature and air pressure to determine if they are "High" or "Low".  Also the opacity is checked to see if it is "Cloudy" or "Sunny".
+
 Depending on what these weather conditions are different holiday activities are chosen.  If the weather data contained corrupt data (i.e. the values are NaN) then this method returns an appropriate message.
 
 ### DateUtil
-This is a utility class which deals with date functionality
+This is a utility class which deals with date functionality.
+
 #### Fields
 **format** : The acceptable date pattern
 
@@ -202,14 +217,19 @@ This is a utility class which deals with date functionality
 
 ### DateValidator
 This class is responsible for ensuring that any date inputs are in a valid format and fall within the specified date range.
+
 #### Fields
 **format** : The acceptable date pattern
+
 **min_date** : The earliest acceptable date
+
 **max_date** : The latest acceptable date
 
 #### Functions
 **validDateFormat()** : This method validates a date as conforming to the correct format.
+
 **validDateRange()** : Ensures the entered date falls within the acceptable date range.  The acceptable date range is specified being between the min_date and max_date inclusive.
+
 **validateDate()** : Validates that the date is both in valid format and falls within acceptable date range.  This method calls both `validDateFormat()` and `validDateRange()` to perform its validation.
         
 ### run.py
@@ -217,18 +237,28 @@ This is a script that is required in order to run an application in Heroku.  For
 
 ### HitchhikersGuide.py
 This script displays a welcome message and an introductory instructions before calling the *main()* method.
+
 #### Functions
+
 **main()** : This method controls the entire Hitchhiker's Guide to the Red Planet app.  First is loads the data from the Mars weather data CSV file, calling the `LoadData.load()` method.
+
 Next it runs a validation loop asking the inter-galactic, time-travelling tourist for an arrival date.  If an invalid date is entered the Hitchhiker's Guide to the Red Planet will keep asking until it receives a valid date.
+
 Then it runs a validation loop asking the inter-galactic, time-travelling tourist for a stay duration.  If an invalid duration is entered the Hitchhiker's Guide to the Red Planet will keep asking until it receives a valid duration.
+
 Then it runs a validation loop asking the inter-galactic, time-travelling tourist whether they want to see weather data.  If an invalid option is entered the Hitchhiker's Guide to the Red Planet will keep asking until it receives a valid option.
+
 Once the inter-galactic, time-travelling tourist has entered valid inputs, the `HitchhikersGuide.py` retrieves the appropriate Sols for the entered data by calling `load_data.search_for_days()` and passing in the chosen search date and stay duration.
 Some days are missing from the Mars weather dataset.  If the tourist accidentally chooses one of these dates then a warning message is displayed to the tourist, and the script stops.  Otherwise, the returned Sols are stored in a list called `weather_days`.
 Then this script retrieves the median temperature and air pressure by calling `load_data.get_median_temperature()` and `load_data.get_median_air_pressure()` respectively.
+
 Then this script creates a WeatherActivity object, passing in the median temperature and air pressure.
+
 The this script loops over every Sol stored in `weather_days`.  In this loop the script retrieves the appropriate holiday activity for each Sol by calling `weather_activity.decideWeatherActivity(weather_day)`.  If the inter-galactic, time-travelling tourist chose to view the weather information this script then appends the weather information for this Sol to the activity string `day_activity`.  At the end of this loop the `day_activity` string is added to a list called `activities`.
 Now that all the activities have been found.  This script checks and if the inter-galactic, time-travelling tourist chose to view the weather information, this script displays the median temperature and air pressure.
+
 Then this script displays the activities for the chosen holiday.
+
 This script performs a check to see if the tourist selected a valid date near the last valid day and then chose a duration that select days that are outside the valid range.  If that situation occurred, this script will display a warning message.
 
 ## UX
