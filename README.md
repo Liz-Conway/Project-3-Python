@@ -18,7 +18,6 @@ This command line tool in python explores real-time data representing the weathe
  
 This examines the data in a fictional response to creating a critical guide to hitch hiking on the Red Planet.  The aim is to interrogate the data and create the best possible outcomes to holidaying in Mars.  The reason this has been selected is to use something like NASA's data and interrogate the data set into meaningful information and creating actionable insights based upon this.
   
- It can be a minefield for people who struggle with the daily nuances of communication and need a reference and guide to navigate proper interpretation of the written and unspoken  word.  The aim is to evoke a neural response and consequently influence behaviour and outcome.
  
  ## How does it work
 This a unique way of interpreting real world data using a command line interface in python.  This application will attempt to find out what holiday activities are best suited on the Red planet in a fictional sense.  It will give the applicable holiday activities for any given day according to the weather that is experienced on that particular day.  The aim is to interrogate the dataset and come up with the best laid plans for enjoying a holiday.  The simple command line interface is OS independent and not pertaining to any computer architecture and could be run in any environment. 
@@ -274,8 +273,8 @@ Was advised by PM/mentor that no UX was required for this project.
 |Process |![Process symbol](documentation/flow-chart/process.png)|
 |Code |![Code symbol](documentation/flow-chart/code.png)|
 
-Input :  ![Inputs](documentation/flow-chart/input.png)
-Output
+
+
 <img alt="Flow chart for Hitchhikers Guide to the Red Planet" src="documentation/flow-chart/hitchhikers-flow-chart.png" width="100%">
 
 
