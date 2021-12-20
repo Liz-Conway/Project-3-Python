@@ -17,9 +17,17 @@ The following tests were carried out on the Hitchhiker's Guide to the Red Planet
 
 <img alt="test with valid data showing many dates and weather info" width="100%" src="valid-weather-many.png">
 
-## Invalid inputs
+## Invalid Search date
 
-<img alt="test with invalid inputs" width="100%" src="invalid-inputs.png">
+<img alt="test with invalid inputs" width="100%" src="invalid-date.png">
+
+## Invalid stay duration
+
+<img alt="test with invalid inputs" width="100%" src="invalid-duration.png">
+
+## Invalid show weather option
+
+<img alt="test with invalid inputs" width="100%" src="invalid-weather-option.png">
 
 ## Dataset contains NaN data for one date
 
