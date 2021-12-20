@@ -21,36 +21,37 @@ This examines the data in a fictional response to creating a critical guide to h
  It can be a minefield for people who struggle with the daily nuances of communication and need a reference and guide to navigate proper interpretation of the written and unspoken  word.  The aim is to evoke a neural response and consequently influence behaviour and outcome.
  
  ## How does it work
-This a unique way of interpreting real world data using a command line interface in python.  This application will attempt to find out what holiday activities are best suited on the Red planet in a fictional sense.  It will give the applicable holiday activities for any given day according to the weather that is experienced on that particular day.  The aim is to interrogate the dataset and come up with the best laid plans for enjoying a holiday.  The simple command line interface is OS independent and not pertaining to any computer architectue and could be run in any environment. 
+This a unique way of interpreting real world data using a command line interface in python.  This application will attempt to find out what holiday activities are best suited on the Red planet in a fictional sense.  It will give the applicable holiday activities for any given day according to the weather that is experienced on that particular day.  The aim is to interrogate the dataset and come up with the best laid plans for enjoying a holiday.  The simple command line interface is OS independent and not pertaining to any computer architecture and could be run in any environment. 
 
 ![Table of available activities](documentation/requirements/images/activity-table.png)
 
 
 ## Features
-1. Choose arrival date
+1. **Choose arrival date**
  
 ![Choose arrival date](documentation/features/choose-arrival.png)
 
-Our inter-galactic, time-travelling tourists are first asked to enter the date on which they will be starting their holiday.  For any holiday an arrival date is very important, but when you are travelling into the past is importance is heightened even more.  Without this feature the inter-galactic, time-travelling tourist would not be able to start their Martian holiday.
+Our inter-galactic, time-travelling tourists are first asked to enter the date on which they will be starting their holiday.  For any holiday an arrival date is very important, but when you are travelling into the past its importance is heightened even more.  Without this feature the inter-galactic, time-travelling tourist would not be able to start their Martian holiday.
 
-2. Choose stay duration
+2. **Choose stay duration**
 
 ![Choose stay duration](documentation/features/choose-duration.png)
 
 Second in importance only to the arrival date is the duration.  This is of great value to the inter-galactic, time-travelling tourist as it allows him/her/it to spend more than one day on the glorious red planet.  Every good holiday last for a few days or even a few weeks, so this feature is very important for ensuring that our inter-galactic, time-travelling tourist has a proper, full holiday.
 
-3. Choose whether to display weather information
+3. **Choose whether to display weather information**
 
 ![Choose weather](documentation/features/choose-weather.png)
 
 Showing the weather information is an option that the inter-galactic, time-travelling tourist can avail of.  This option gives value to the inter-galactic, time-travelling tourist as he/she/it can see what the actual weather conditions are and can make plans accordingly.  They can also see why the particular activities were chosen for them.
 
-4. Introduction
+4. **Introduction**
 
-![Welcome](documentation/features/welcom.png)
+![Welcome](documentation/features/welcome.png)
+
 A warm welcome is presented to the inter-galactic, time-travelling tourist at the top of the screen.  This helps to present a friendly image of the application and of the holiday destination itself.
 
-5. Clear instructions
+5. **Clear instructions**
 
 ![Welcome instructions](documentation/features/welcome-instructions.png)
 
@@ -79,13 +80,13 @@ The inter-galactic, time-travelling tourist knows that the only available option
 
 There is no guesswork for the inter-galactic, time-travelling tourists.  They have a clear idea in their head(s) what is expected of them when using the Hitchhiker's Guide to the Red Planet.  This reduces the cognitive load on the inter-galactic, time-travelling tourist and helps to make using the Hitchhiker's Guide to the Red Planet a positive, enjoyable experience for the inter-galactic, time-travelling tourist.
 
-6.    Feedback
+6.    **Feedback**
 
 ![feedback](documentation/features/feedback.png)
 
 Hitchhiker's Guide to the Red Planet always gives the inter-galactic, time-travelling tourist plenty of feedback.  This means that the inter-galactic, time-travelling tourist is always aware about what the Hitchhiker's Guide to the Red Planet is doing.  They will not lose their place and will not lose interest in the application.
 
-7. Validation of user inputs
+7. **Validation of user inputs**
 
 Arrival date:
 
@@ -107,7 +108,7 @@ If the inter-galactic, time-travelling tourist enters anything other than 'Y' or
 
 All these validations ensure that the Hitchhiker's Guide to the Red Planet is only run with correct inputs.  This ensures that the Hitchhiker's Guide to the Red Planet does not crash or show a programming error to the inter-galactic, time-travelling tourist.  This helps enhance the user experience as the output will always be what the inter-galactic, time-travelling tourist is expecting.
 
-8. Colourisation
+8. **Colourisation**
 
 ![Colourisation 1](documentation/features/colour1.png)
 ![Colourisation 2](documentation/features/colour2.png)
@@ -117,25 +118,25 @@ This helps the inter-galactic, time-travelling tourist to distinguish what is go
 
 This grouping is important since there is a lot of information being printed to the screen at one time.  If it was all a uniform colour the inter-galactic, time-travelling tourist would have a hard time distinguishing one piece of information from another.  They would need to work harder to pick out the information that they need.  This would increase their cognitive load, add eye-strain and make the whole experience less pleasant.
 
-9. Show holiday activity
+9. **Show holiday activity**
 
 ![Holiday activity](documentation/features/activity.png)
 
 This is the whole point of the Hitchhiker's Guide to the Red Planet.  The inter-galactic, time-travelling tourist needs to be able to see what holiday activity is suitable for when they are going to be on Mars.  This is of critical value for the inter-galactic, time-travelling tourist.  Without this feature there would be no point to the Hitchhiker's Guide to the Red Planet.
 
-10. Show holiday activity for multiple days
+10. **Show holiday activity for multiple days**
 
 ![Holiday activities](documentation/features/activities.png)
 
 Since most inter-galactic, time-travelling tourists go on holiday for more than one day at a time, this is also a critical feature that the Hitchhiker's Guide to the Red Planet needs to have.  It would not be acceptable to an inter-galactic, time-travelling tourist to only see the applicable activity for one of the days they are planning to stay on Mars.
 
-11. Show extra weather information
+11. **Show extra weather information**
 
 ![Weather information](documentation/features/weather-activities.png)
 
 This is not a critical feature, which is why it is optional.  However by using this feature the inter-galactic, time-travelling tourist can see what the median temperature and air pressure are.  This way they can guage when a temperature or air pressure is "high" or "low".  This gives the inter-galactic, time-travelling tourist a sense of control.  They can figure out for themselves why a particular activity was chosen.  This feeling of control contributes to a positive experience using the Hitchhiker's Guide to the Red Planet.
 
-12. Friendly thank you
+12. **Friendly thank you**
 
 ![Thank you](documentation/features/thank-you.png)
 
@@ -352,7 +353,7 @@ The major difference between cloning and forking is where your updates go when y
 
 With cloning you are pushing the updates to the `Liz-Conway/Project-3-Python` repo on github.
 
-With forking you are pushing the updates to your own Social Story Animation repo on github.
+With forking you are pushing the updates to your own Hitchhiker's Guide to the Red Planet repo on github.
 
 
 ## Credit
