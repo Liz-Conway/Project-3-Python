@@ -23,6 +23,10 @@ class WeatherActivity():
         activity = "Do nothing"
         # https://stackabuse.com/how-to-format-dates-in-python/
         activity_date = sol.earth_date.strftime("%A, %d %b %Y")
+        # Add padding to end of the activity date
+        # This will align the output when printed to the screen
+        # https://www.delftstack.com/howto/python/python-pad-string-with-spaces
+        activity_date = activity_date.ljust(22)
 
         if sol.temperature == "NaN":
             return f"Planet closed on :  {activity_date}"
@@ -63,4 +67,10 @@ class WeatherActivity():
                     # Low Temp, Cloudy, Low pressure
                     activity = "Play Sardines"
 
+        # Add padding to end of the activity
+        # This will align the output when printed to the screen
+        # https://www.delftstack.com/howto/python/python-pad-string-with-spaces
+        activity = activity.ljust(13)
+
+        
         return f"{activity_date} :  " + Fore.RED + f"{activity}" + Fore.RESET

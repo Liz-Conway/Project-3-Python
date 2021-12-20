@@ -125,13 +125,23 @@ def main():
                 press_col = Fore.GREEN + Style.BRIGHT + Back.BLUE
                 opacity_col = Fore.LIGHTYELLOW_EX + Back.BLUE
                 day_activity += "  " + temp_col
-                day_activity += str(weather_day.temperature)
-                day_activity += " degrees" + Back.RESET
+                day_temp = str(weather_day.temperature)
+                day_temp += " degrees"
+                # Add padding to end of the temperature
+                # This will align the output when printed to the screen
+                # https://www.delftstack.com/howto/python/python-pad-string-with-spaces
+                day_temp = day_temp.ljust(11)
+                day_temp += Back.RESET
+                day_activity += day_temp
                 day_activity += "  " + press_col
                 day_activity += str(weather_day.air_pressure)
                 day_activity += " Pascal" + Back.RESET
                 day_activity += "  " + opacity_col
-                day_activity += weather_day.opacity + Fore.RESET + Back.RESET
+                # Add padding to end of the temperature
+                # This will align the output when printed to the screen
+                # https://www.delftstack.com/howto/python/python-pad-string-with-spaces
+                day_opacity = weather_day.opacity.ljust(6)
+                day_activity += day_opacity + Fore.RESET + Back.RESET
                 day_activity += Style.RESET_ALL
             activities.append(day_activity)
 

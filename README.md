@@ -55,7 +55,7 @@ A warm welcome is presented to the inter-galactic, time-travelling tourist at th
 
 ![Welcome instructions](documentation/features/welcome-instructions.png)
 
-All instructions are presented in a clear manner and use unambiguous language to let the inter-galactic, time-travelling tourist know exactly what they need to do while using the Hitchhiker's Guide to the Red Planet.
+All instructions are presented in a clear manner and use unambiguous language to let the inter-galactic, time-travelling tourist know exactly what they need to do while using the Hitchhiker's Guide to the Red Planet application.
 
 Instruction for each input
 
@@ -64,7 +64,7 @@ Date input instructions:
 ![Date input instructions](documentation/features/date-instructions.png)
 
 
-The inter-galactic, time-travelling tourist is given clear instructions on both the format of the date input that is required, and what date range is acceptable.  Thus the inter-galactic, time-travelling tourist knows what dates they can enter and how the should enter them.
+The inter-galactic, time-travelling tourist is given clear instructions on both the format of the date input that is required, and what date range is acceptable.  Thus the inter-galactic, time-travelling tourist knows what dates they can enter and how they should enter them.
 
 Stay duration input instructions:
 
