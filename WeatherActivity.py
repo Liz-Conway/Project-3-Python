@@ -25,7 +25,7 @@ class WeatherActivity():
     def decideWeatherActivity(self, sol):
         '''
         Calculates the holiday activity applicable for the passed in Sol.
-        This is done by comparing the temparature and air pressure with the 
+        This is done by comparing the temparature and air pressure with the
         median temperature and air pressure to determine if they are
         "High" or "Low".  Also the opacity is checked to see if it is
         "Cloudy" or "Sunny".
@@ -88,5 +88,4 @@ class WeatherActivity():
         # https://www.delftstack.com/howto/python/python-pad-string-with-spaces
         activity = activity.ljust(13)
 
-        
         return f"{activity_date} :  " + Fore.RED + f"{activity}" + Fore.RESET

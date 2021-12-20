@@ -8,7 +8,7 @@ Created on 1 Dec 2021
 class Sol():
     '''
     A Sol is a Martian day.
-    This class holds the temperature, air pressure, opacity 
+    This class holds the temperature, air pressure, opacity
     and the equivalent date on earth.
     One Sol class will be created for every row of data in
     the Mars weather dataset.
@@ -21,7 +21,7 @@ class Sol():
                     earth_date(date)    Equivalent date on Earth for this Sol
                     temperature(int)    Temperature for this Sol
                     air_pressure(int)    Air pressure for this Sol
-                    opacity(string)     Opacity for this Sol ("Cloudy" or "Sunny")
+                    opacity(string)     Opacity for this Sol ("Cloudy"/"Sunny")
         '''
         self.earth_date = earth_date
         self.temperature = temperature

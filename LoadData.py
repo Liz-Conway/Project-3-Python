@@ -34,7 +34,7 @@ class LoadData():
         Reads the data from the Mars weather CSV file line by line,
         one line for each day (Sol).
         Stores the weather data for the entire dataset in the weather variable
-        It also determines the maximum temperature, maximum air pressure, 
+        It also determines the maximum temperature, maximum air pressure,
         minimum temperature and minimum air pressure of the entire dataset
         Parameters :    None
         Returns :        Nothing
@@ -101,7 +101,7 @@ class LoadData():
                     search_date(date) :   Date to search for
                     days(int)         :   Number of Sols (days) to return
         Returns :
-                    sols(list)        :    List of 'days' number of Sols 
+                    sols(list)        :    List of 'days' number of Sols
                                             from the search_date
         Throws :    IndexError            If search_date not in weather list
         '''

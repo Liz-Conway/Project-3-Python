@@ -24,7 +24,7 @@ class DateValidator():
 
     def validateDate(self, date_string):
         '''
-        Validates that the date is both in valid format 
+        Validates that the date is both in valid format
         and falls within acceptable date range
         Parameters : date_string(string) Date to check for validity
         '''

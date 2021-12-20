@@ -167,7 +167,7 @@ def main():
         for activity in activities:
             print(f"    {activity}")
 
-        # If the user choses a valid date but the number of stay days
+        # If the user chooses a valid date but the number of stay days
         # will go beyond the dates in the dataset
         # print a message to the user informing them of this
         if int(stay_days) > len(activities):
