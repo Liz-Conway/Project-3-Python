@@ -145,6 +145,10 @@ Closing with a friendly thank you to the inter-galactic, time-travelling tourist
 ### Known Bugs
 Sometimes the Mars Rover did not return any data for a particular day.  Thus there is no entry in the data for that day.  If a tourist enters a "missing day" as their arrival date, then a warning message is shown.  Otherwise the impact of missing some days in the dataset means that occassionally the output will contain skipped days, e.g. going from Saturday 8th September to Monday 10th September.  However the correct number of days will still be shown according to the stay duration the inter-galactic, time-travelling tourist entered.
 
+## Screen Mockup
+
+![Mockup of screen](documentation/mockup/mockup.png)
+
 ## Data model
 I decided to use a script module (HitchhikersGuide.py) to launch the Hitchhiker's Guide to the Red Planet app.  I also decided to use a number of classes as the data model.
 
