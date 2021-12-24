@@ -121,6 +121,10 @@ def main():
         for weather_day in weather_days:
             day_activity = weather_activity.decideWeatherActivity(weather_day)
             if show_weather == "Y":
+                # PEP8 Validation - had to split the string below to keep each
+                # line below 80 characters
+                # https://stackoverflow.com/questions/287871/
+                # how-to-print-colored-text-to-the-terminal
                 temp_col = Fore.CYAN + Style.BRIGHT + Back.BLUE
                 press_col = Fore.GREEN + Style.BRIGHT + Back.BLUE
                 opacity_col = Fore.LIGHTYELLOW_EX + Back.BLUE
@@ -181,6 +185,7 @@ def main():
             blast_off += "from the planet before this" + Back.RESET
             print(blast_off)
 
+    # https://www.tutorialsteacher.com/python/error-types-in-python
     except IndexError as e:
         warning = "\n" + Back.RED + Fore.BLACK
         warning += f"Mars Rover was not operational on {search_date}\n"

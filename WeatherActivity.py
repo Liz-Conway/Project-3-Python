@@ -88,4 +88,8 @@ class WeatherActivity():
         # https://www.delftstack.com/howto/python/python-pad-string-with-spaces
         activity = activity.ljust(13)
 
+        # PEP8 Validation - had to split the string below to keep each
+        # line below 80 characters
+        # https://stackoverflow.com/questions/287871/
+        # how-to-print-colored-text-to-the-terminal
         return f"{activity_date} :  " + Fore.RED + f"{activity}" + Fore.RESET

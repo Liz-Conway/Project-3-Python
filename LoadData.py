@@ -40,6 +40,10 @@ class LoadData():
         Returns :        Nothing
         '''
         self.loaded_data = open(self.csv_file, 'r')
+        # PEP8 Validation - had to split the string below to keep each line
+        # below 80 characters
+        # https://www.kite.com/python/answers/
+        # how-to-skip-the-first-line-of-a-file-in-python
         # Remove header line
         next(self.loaded_data)
 

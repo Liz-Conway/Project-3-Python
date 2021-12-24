@@ -49,9 +49,14 @@ class DateValidator():
         '''
         validated = True
 
+        # PEP8 Validation - had to split the string below to keep each line
+        # below 80 characters
+        # https://www.kite.com/python/answers/
+        # how-to-validate-a-date-string-format-in-python
         try:
             # https://stackabuse.com/how-to-format-dates-in-python/
             datetime.strptime(date_string, self.format)
+        # https://www.tutorialsteacher.com/python/error-types-in-python
         except ValueError:
             validated = False
 
